@@ -14,14 +14,16 @@
 	<body>
 		<div class="questions">
 		<form action="index.php" name="my form" method="POST"><br>
-			How frequently do you use hackathon platforms?: 
+			How frequently do you use hackathon platforms?: <br>
 			<input type="text" name="QuestionOne"><br><br>
+
 			Have you seen our website before?<br>
-			<input type="radio" name="InputOne" value="Yes">Yes<br>
-			<input type="radio" name="InputTwo" value="No">No<br><br>
+			<input type="radio" name="Input" value="Yes">Yes<br>
+			<input type="radio" name="Input" value="No">No<br><br>
 
 			How would you rate your user experience?:
-			<select name="rating">
+
+			<select name="rating" style="color: black !important;">
 				<option value="one" selected="selected">1</option>
 				<option value="two">2</option>
 				<option value="three">3</option>
@@ -32,7 +34,8 @@
 				<option value="eight">8</option>
 				<option value="nine">9</option>
 				<option value="ten">10</option>
-			</select><br>
+			</select><br>	
+			
 		 
 			
 
@@ -43,7 +46,7 @@
 
 						
 			<br>Additional Comments:<br>
-			<textarea rows="8" cols="103" class="textareastyle"></textarea><br>
+			<textarea class="textareastyle"></textarea><br>
 
 			<button class="button button1">Submit Comments</button>
 		</form>
