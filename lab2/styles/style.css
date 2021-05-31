@@ -1,0 +1,97 @@
+/* This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp> */
+
+.selectStyle {
+	text-align: center;
+	margin: 2%;
+}
+
+.optgroup { font-size: 100%; }
+
+.advert {
+	position: relative;
+	width: 100%;
+}
+
+.advertContainer {
+	width: 70%;
+	position: relative;
+	left: 12%;
+	padding: 4%;
+	margin-bottom: 2%;
+	background-color: #00539b;
+}
+
+.icons {
+	width: 4%;
+	position: relative;
+	left: 52%;
+	margin: 1%;
+}
+
+.icons:hover {
+	/* Start the shake animation and make the animation last for 0.5 seconds */
+	animation: shake 1.5s;
+}
+
+/* Shake an Image from https://www.w3schools.com/howto/howto_css_shake_image.asp */
+@keyframes shake {
+	0% { transform: translate(0.1px, 0.1px) rotate(0deg); }
+	10% { transform: translate(-0.1px, -0.2px) rotate(-1deg); }
+	20% { transform: translate(-0.3px, 0px) rotate(1deg); }
+	30% { transform: translate(0.3px, 0.2px) rotate(0deg); }
+	40% { transform: translate(0.1px, -0.1px) rotate(1deg); }
+	50% { transform: translate(-0.1px, 0.2px) rotate(-1deg); }
+	60% { transform: translate(-0.3px, 0.1px) rotate(0deg); }
+	70% { transform: translate(0.3px, 0.1px) rotate(-1deg); }
+	80% { transform: translate(-0.1px, -0.1px) rotate(1deg); }
+	90% { transform: translate(0.1px, 0.2px) rotate(0deg); }
+	100% { transform: translate(0.1px, -0.2px) rotate(-1deg); }
+}
+
+h1 {
+	font-family: Arial, Helvetica, "Helvetica Neue", Roboto, sans-serif;
+	font-size: 300%;
+	/* font-style: oblique; */
+	margin-left: 2%;
+	font-weight: 90000000;
+	color: #E41134;
+}
+
+.drop {
+	font-size: 200%; 
+}
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #00539b;
+}
+
+.tab button {
+  color: #EEEEEE;
+  background-color: #005cac;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  width: 10%;
+  font-size: large;
+}
+
+.tab button:hover {
+  background-color: #005cac62;
+}
+
+.tab button.active {
+  background-color: #005cac00;
+}
+
+.tabcontent {
+  font-family: 'Open Sans', 'Helvetica Neue', 'Segoe UI', 'Calibri', 'Arial', sans-serif;  display: none;
+  background-color: white;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
