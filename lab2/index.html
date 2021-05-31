@@ -31,13 +31,14 @@
 	<label for="dietSelect" id="dietSelect" value="dairyFree">Dairy-Free</label><br>
 	<input type="checkbox"  id="dietSelect" name="dietSelect" onclick="populateListProductChoices(this.id, 'displayProduct')">
 	<label for="dietSelect" id="dietSelect" value="nutFree">Nut-Free</label><br> -->
-	<div style=" text-align: left; margin-left: 40%; ">
-			1. Would you like only organic products?<br>
+	<div style=" text-align: center ">
+			<h3>1. Would you like only organic products?</h3></div>
+			<div style=" text-align: left; margin-left: 47%; font-size: large;">
 				<input type="radio" name="Input" value="Yes" onchange="organic=true">Yes<br>
-				<input type="radio" name="Input" value="No" onchange="organic=false">No<br><br>
+				<input type="radio" name="Input" value="No" onchange="organic=false">No<br>
 		</div>
 		
-	<div class="selectStyle"><div class="drop">2. Choose a Category:</div>
+	<div class="selectStyle"><h3>2. Choose a Category:</h3>
 	
 	<select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
 	<optgroup>
@@ -63,18 +64,20 @@
 
 <div id="Products" class="tabcontent">
 	<h2 style="text-align: center; font-size: xx-large;">Your Products</h2>
+	<img src="assets/prod.jpg" width="100%">
+
 	<h3>We preselected products based on your restrictions.</h3>
 	 Choose items to buy:
 	 <div id="displayProduct"></div><br>
-	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
+	 <button id="addCart" style="margin-left: 42%; font-size: large; background-color: #005cac5b;" type="button" class="block" onclick="selectedItems()">
 		Add selected items to cart.
 	</button>
 </div>
 
 <div id="Cart" class="tabcontent">
-  <h2>Your Cart</h2>
-  <p>Here is your cart.</p>
-  <div id="displayCart"></div>
+  <h2 style="text-align: center; font-size: xx-large;">Your Cart</h2>
+  <img src="assets/cart.jpg" width="100%">
+  <div id="displayCart" style="font-size: large;"></div><br>
 </div>
 
 <h1> Welcome to Costco Groceries</h1>

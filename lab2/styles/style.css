@@ -2,7 +2,7 @@
 
 .selectStyle {
 	text-align: center;
-	margin: 2%;
+	margin-bottom: 2%;
 }
 
 .optgroup { font-size: 100%; }
@@ -58,7 +58,7 @@ h1 {
 }
 
 .drop {
-	font-size: 200%; 
+	font-size: xx-large; 
 }
 
 .tab {
