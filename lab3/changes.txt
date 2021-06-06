@@ -1,0 +1,16 @@
+Bug Fixes:
+	- Fixing width of the tab names
+
+
+Persona Features:
+	Kevin:
+	- Snacks Section
+	- Lunches
+
+	Frida:
+	- Common Items
+	- Delivery
+	- Schedule A Pick-Up
+
+Word Changes:
+	- 
