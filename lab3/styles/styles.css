@@ -1,35 +1,66 @@
 /* This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp> */
 
-.selectStyle {
-	text-align: center;
-	margin-bottom: 2%;
+  /* Style the tab content */
+.tabcontent {
+  display: none;
+  text-align: center;
+  padding: 6px 12px;
+  position: relative;
+  min-width: 300px;
 }
 
-.optgroup { font-size: 100%; }
-
-.advert {
-	position: relative;
-	width: 100%;
+.back{
+  font-family: Arial, Helvetica, "Helvetica Neue", Roboto, sans-serif;
+  width: 100%; 
 }
 
-.advertContainer {
-	width: 70%;
-	position: relative;
-	left: 12%;
-	padding: 4%;
-	margin-bottom: 2%;
-	background-color: #00539b;
+.tabcontent{
+  background-color: #005cac;
+  color:white;
+}
+
+.productList{
+  position: relative;
+  left: 13%;
+  text-align: left;
+  margin: 0% 30% 0% 30%;
+  width: 60%;
+  padding: 10px;
+  
+}
+
+.displayCart{
+  position: relative;
+  text-align: left;
+  margin: 0% 30% 0% 38%;
+  padding: 10px;
+
+}
+
+.totalPrice{
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+
+}
+
+.check{
+  position: relative;
+  left: 8%;
+  text-align: left;
+  margin: 0% 30% 0% 38%;
 }
 
 .icons {
-	width: 4%;
+	width: 6%;
 	position: relative;
-	left: 52%;
+	left: 49%;
 	margin: 1%;
 }
 
 .icons:hover {
-	/* Start the shake animation and make the animation last for 0.5 seconds */
 	animation: shake 1.5s;
 }
 
@@ -51,47 +82,10 @@
 h1 {
 	font-family: Arial, Helvetica, "Helvetica Neue", Roboto, sans-serif;
 	font-size: 300%;
-	/* font-style: oblique; */
 	margin-left: 2%;
-	font-weight: 90000000;
 	color: #E41134;
 }
 
 .drop {
 	font-size: xx-large; 
-}
-
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #00539b;
-}
-
-.tab button {
-  color: #EEEEEE;
-  background-color: #005cac;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  width: 10%;
-  font-size: large;
-}
-
-.tab button:hover {
-  background-color: #005cac62;
-}
-
-.tab button.active {
-  background-color: #005cac00;
-}
-
-.tabcontent {
-  font-family: 'Open Sans', 'Helvetica Neue', 'Segoe UI', 'Calibri', 'Arial', sans-serif;  display: none;
-  background-color: white;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
 }

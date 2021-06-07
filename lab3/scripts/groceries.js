@@ -8,85 +8,173 @@ var products = [
 		dairyFree: true,
 		nutFree: true,
 		price: 0.99,
-		org: false
+		organic: false,
+		snacks: true,
+		meals: false
 	},
 	{
 		name: "Cucumber",
 		dairyFree: true,
 		nutFree: true,
 		price: 1.99,
-		org: true
+		organic: true,
+		snacks: false,
+		meals: false
+	},
+	{
+		name: "Mountain Dew",
+		dairyFree: true,
+		nutFree: true,
+		price: 2.25,
+		organic: false,
+		snacks: true,
+		meals: false
+	},
+	{
+		name: "Fries",
+		dairyFree: true,
+		nutFree: true,
+		price: 2.75,
+		organic: false,
+		snacks: false,
+		meals: true
 	},
 	{
 		name: "Bread",
 		dairyFree: true,
 		nutFree: true,
 		price: 2.99,
-		org: false
+		organic: false,
+		snacks: false,
+		meals: false
+	},
+	{
+		name: "Takis",
+		dairyFree: true,
+		nutFree: true,
+		price: 2.99,
+		organic: false,
+		snacks: true,
+		meals: false
+	},
+	{
+		name: "Cheetos",
+		dairyFree: true,
+		nutFree: true,
+		price: 2.99,
+		organic: false,
+		snacks: true,
+		meals: false
 	},
 	{
 		name: "Doritos",
 		dairyFree: true,
 		nutFree: true,
 		price: 2.99,
-		org: false
+		organic: false,
+		snacks: true,
+		meals: false
+	},
+	{
+		name: "Hot Dog",
+		dairyFree: true,
+		nutFree: true,
+		price: 3.25,
+		organic: false,
+		snacks: false,
+		meals: true
 	},
 	{
 		name: "Almond Oat Crunch",
 		dairyFree: true,
 		nutFree: false,
 		price: 3.55,
-		org: true
+		organic: true,
+		snacks: false,
+		meals: false
 	},
 	{
 		name: "Cheerios",
 		dairyFree: true,
 		nutFree: true,
 		price: 3.75,
-		org: false
+		organic: false,
+		snacks: false,
+		meals: false
 	},
 	{
-		name: "Brocoli",
+		name: "Broccoli",
 		dairyFree: true,
 		nutFree: true,
 		price: 3.99,
-		org: true
+		organic: true,
+		snacks: false,
+		meals: false
 	},
 	{
 		name: "Milk",
 		dairyFree: false,
 		nutFree: true,
 		price: 3.99,
-		org: false
+		organic: false,
+		snacks: false,
+		meals: false
+	},
+	{
+		name: "Sandwich",
+		dairyFree: false,
+		nutFree: true,
+		price: 3.99,
+		organic: false,
+		snacks: false,
+		meals: true
 	},
 	{
 		name: "Tomatoes",
 		dairyFree: true,
 		nutFree: true,
 		price: 4.99,
-		org: true
+		organic: true,
+		snacks: false,
+		meals: false
 	},
 	{
 		name: "Yoghurt",
 		dairyFree: false,
 		nutFree: true,
 		price: 4.99,
-		org: false
+		organic: false,
+		snacks: false,
+		meals: false
 	},
 	{
 		name: "Cream Cheese",
 		dairyFree: false,
 		nutFree: true,
 		price: 5.25,
-		org: false
+		organic: false,
+		snacks: false,
+		meals: false
+	},
+	{
+		name: "Medium Pizza",
+		dairyFree: false,
+		nutFree: true,
+		price: 5.99,
+		organic: false,
+		snacks: false,
+		meals: true
 	},
 	{
 		name: "Granola Bars",
 		dairyFree: true,
 		nutFree: false,
 		price: 9.99,
-		org: false
+		organic: false,
+		snacks: true,
+		meals: false
 	}
+
 ];
 	
 
@@ -94,58 +182,36 @@ var products = [
 // given restrictions provided, make a reduced list of products
 // prices should be included in this list, as well as a sort based on price
 
-function restrictListProducts(prods, restriction) {
-	let product_names = [];
-	for (let i=0; i<prods.length; i+=1) {
-		if ((restriction == "dairyFree") && (prods[i].dairyFree == true)){
-			if (organic == true){
-				if (prods[i].org == true){
-					product_names.push(prods[i].name + " ($" + prods[i].price + ")");	
-				}
-			}
-			else {
-				product_names.push(prods[i].name + " ($" + prods[i].price + ")");	
-			}
-		}
-		else if ((restriction == "nutFree") && (prods[i].nutFree == true)){
-			if (organic == true){
-				if (prods[i].org == true){
-					product_names.push(prods[i].name + " ($" + prods[i].price + ")");	
-				}
-			}
-			else {
-				product_names.push(prods[i].name + " ($" + prods[i].price + ")");	
-			}		}
-		else if (restriction == "all"){
-			if (organic == true){
-				if (prods[i].org == true){
-					product_names.push(prods[i].name + " ($" + prods[i].price + ")");	
-				}
-			}
-			else {
-				product_names.push(prods[i].name + " ($" + prods[i].price + ")");	
-			}		}
-	}
-	return product_names;
+function restrictListProducts(prods, nuts, dairy, organic, snacks, meals) {
+    let products_filtered = [...prods]
+
+    if (nuts == true){
+        products_filtered = products_filtered.filter(function(a){return a.nutFree==true});
+    }
+    if (dairy==true){
+        products_filtered = products_filtered.filter(function(a){return a.dairyFree==true});
+    }
+    if (organic==true){
+        products_filtered = products_filtered.filter(function(a){return a.organic==true});
+    }
+	if (snacks==true){
+        products_filtered = products_filtered.filter(function(a){return a.snacks==true});
+    }
+	if (meals==true){
+        products_filtered = products_filtered.filter(function(a){return a.meals==true});
+    }
+    // products_filtered.sort(function(a, b){return a.price - b.price});
+
+	return products_filtered;
 }
 
 // Calculate the total price of items, with received parameter being a list of products
 function getTotalPrice(chosenProducts) {
 	totalPrice = 0;
-	for (let i=0; i<chosenProducts.length; i+=1) {
-		var temp = chosenProducts[i];
-		price = temp.substr(-5).substr(0,4);
-		totalPrice += parseFloat(price);		
+	for (let i=0; i<products.length; i+=1) {
+		if (chosenProducts.indexOf(products[i].name) > -1){
+			totalPrice += products[i].price;
+		}
 	}
-	return totalPrice;
+	return totalPrice.toFixed(2);
 }
-
-// garbage
-// for (let j = 0; j < product_names.length; j += 1){
-// 	if ( prods[i].price > product_names[j].price ){
-// 		product_names.unshift(prods[i].name);
-// 	}
-// 	else (j == product_names.length - 1){
-// 		product_names.push(prods[i].name);
-// 	}
-// }
