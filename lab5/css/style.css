@@ -1,0 +1,45 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(135deg, white 10%, rgb(222, 240, 255), white);
+    overflow-x: hidden;
+}
+
+.bg-light {
+    background-color: rgba(240, 248, 255, 0) !important;
+}
+
+.card {
+    width: 70%;
+    margin-left: 15%;
+    background-color: white;
+}
+
+.card-header {
+    background-color: #72cce767;
+    font-size: large;
+    font-weight: 400;
+}
+
+.card-link {
+    color: rgba(0, 0, 0, 0.849);
+}
+
+.card-link:visited{
+    color: black;
+}
+
+.card-link:hover{
+    color: black;
+}
+
+.card-link:active{
+    color: black;
+}
+
+.nav-item {
+    font-size: xx-large;
+}
+
