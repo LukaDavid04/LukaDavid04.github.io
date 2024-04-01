@@ -71,13 +71,13 @@ export const Home = () => {
           <div style={{ width: "360px" }}>
             <TypeAnimation
               cursor={false}
-              sequence={[1000, "An upcoming SWE Graduate"]}
+              sequence={[1000, "Software Engineer Graduate"]}
             />
           </div>
           <div style={{ width: "360px" }}>
             <TypeAnimation
               cursor={false}
-              sequence={[2500, "at the University of Ottawa"]}
+              sequence={[2500, "from the University of Ottawa"]}
             />
           </div>
         </div>
@@ -113,7 +113,7 @@ export const Home = () => {
 
         <div className="">
           <a
-            href="https://www.linkedin.com/in/luka-david/details/experience/"
+            href="https://www.linkedin.com/in/luka-david"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block"
@@ -127,7 +127,7 @@ export const Home = () => {
                   "--bg-color": "black",
                 }}
                 whileHover={{
-                  "--bg-color": "white",
+                  "--bg-color": "#181A1B",
                   scale: [1, 1.6, 1.2],
                   rotate: [0, 360],
                   borderRadius: ["20%", "20%", "50%", "50%", "20%"],
