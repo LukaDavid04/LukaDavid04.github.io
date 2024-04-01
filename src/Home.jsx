@@ -110,7 +110,7 @@ export const Home = () => {
             </a>
           </ResumeDiv>
         </div>
-        <div className="" padding-bottom="5px">
+        <div className="">
           <a
             href="https://www.linkedin.com/in/luka-david"
             target="_blank"
