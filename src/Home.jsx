@@ -102,7 +102,7 @@ export const Home = () => {
           </GitHubDiv>
           <ResumeDiv>
             <a
-              href="https://drive.google.com/file/d/1PwBjMBwHCBl9_TpLO8qIkCXAkycQPPa5/view?usp=sharing"
+              href="https://drive.google.com/file/d/1ERDH3VnDQs_H-0uQu3bKwI1grGyY2Yfc/view"
               target="_blank"
               rel="noreferrer"
             >
