@@ -1,7 +1,16 @@
-export const PROJECTS = [
+type Project = {
+  name: string
+  desc: string
+  tags: string[]
+  details: string
+  href?: string
+}
+
+export const PROJECTS: Project[] = [
   {
     name: "This Portfolio",
     desc: "A lean, fast React + Vite portfolio with reusable UI, animations, and clean routing.",
+    href: "https://lukadavid04.github.io/",
     tags: [
       "TypeScript",
       "React",

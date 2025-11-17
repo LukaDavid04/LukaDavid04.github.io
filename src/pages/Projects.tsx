@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 
 export function Projects() {
   const [expanded, setExpanded] = React.useState<number | null>(null)
-  const sectionRefs = React.useRef<Array<HTMLDivElement | null>>([])
+  const sectionRefs = React.useRef<Array<HTMLElement | null>>([])
 
   const toggle = (i: number) => {
     setExpanded((prev) => (prev === i ? null : i))

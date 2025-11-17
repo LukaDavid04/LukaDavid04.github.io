@@ -23,8 +23,33 @@ const buttonVariants = cva(
   }
 )
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {}
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({ className, variant, size, ...props }, ref) => (
-  <button ref={ref} className={cn(buttonVariants({ variant, size, className }))} {...props} />
-))
+type ButtonBaseProps = VariantProps<typeof buttonVariants> & {
+  asChild?: boolean
+}
+
+type ButtonAsButton = ButtonBaseProps & { asChild?: false } & React.ButtonHTMLAttributes<HTMLButtonElement>
+type ButtonAsAnchor = ButtonBaseProps & { asChild: true; children: React.ReactElement } & React.AnchorHTMLAttributes<HTMLAnchorElement>
+type ButtonProps = ButtonAsButton | ButtonAsAnchor
+
+export const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
+  ({ className, variant, size, asChild = false, children, ...props }, ref) => {
+    const classes = cn(buttonVariants({ variant, size, className }))
+
+    if (asChild && React.isValidElement(children)) {
+      const anchorProps = props as React.AnchorHTMLAttributes<HTMLAnchorElement>
+      return React.cloneElement(children as React.ReactElement, {
+        ...anchorProps,
+        ref,
+        className: cn(classes, (children as { props?: { className?: string } }).props?.className),
+      })
+    }
+
+    const buttonProps = props as React.ButtonHTMLAttributes<HTMLButtonElement>
+    return (
+      <button ref={ref as React.Ref<HTMLButtonElement>} className={classes} {...buttonProps}>
+        {children}
+      </button>
+    )
+  }
+)
 Button.displayName = 'Button'
