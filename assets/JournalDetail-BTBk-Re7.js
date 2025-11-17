@@ -1,0 +1,8 @@
+import{c as u,u as j,j as s,L as i}from"./index-BbjjPq87.js";import{J as h}from"./journal-8ELchfrM.js";/**
+ * @license lucide-react v0.453.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const w=u("ArrowLeft",[["path",{d:"m12 19-7-7 7-7",key:"1l729n"}],["path",{d:"M19 12H5",key:"x3x0zl"}]]);function $(){const{slug:m}=j(),t=h.find(e=>e.slug===m);if(!t)return s.jsxs("div",{children:[s.jsx("p",{className:"text-sm text-muted-foreground",children:"Entry not found."}),s.jsx(i,{to:"/journal",className:"underline text-sm",children:"Back to Journal"})]});const d=new Map((t.comments??[]).map(e=>[`${e.paragraph}-${e.wordIndex}`,e]));return s.jsxs("article",{className:"max-w-3xl",children:[s.jsxs(i,{to:"/journal",className:"inline-flex items-center gap-2 text-sm underline mb-4",children:[s.jsx(w,{className:"h-4 w-4"})," Back to Journal"]}),s.jsx("h1",{className:"text-3xl font-semibold tracking-tight",children:t.title}),s.jsx("div",{className:"text-xs text-muted-foreground mt-1",children:new Date(t.date).toLocaleDateString()}),s.jsx("div",{className:"prose prose-sm sm:prose-base dark:prose-invert mt-6",children:t.content.split(`
+
+`).map((e,a)=>{const x=e.split(/(\s+)/);let r=0;return s.jsx("p",{className:"leading-7 whitespace-pre-wrap",children:x.map((n,o)=>{if(/^\s+$/.test(n)||n==="")return s.jsx("span",{children:n},`${a}-space-${o}`);const l=d.get(`${a}-${r}`),c=`${a}-word-${o}`,p=l?s.jsxs("span",{className:"annotation-word",tabIndex:0,children:[n,s.jsx("span",{className:"annotation-tooltip",children:l.text})]},c):s.jsx("span",{children:n},c);return r+=1,p})},a)})})]})}export{$ as JournalDetail};
