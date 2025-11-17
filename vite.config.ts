@@ -3,6 +3,6 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 export default defineConfig({
   plugins: [react()],
-  base: "/LukaDavid04.github.io/",
+  base: "/my-portfolio",
   resolve: { alias: { "@": path.resolve(__dirname, "src") } },
 });
