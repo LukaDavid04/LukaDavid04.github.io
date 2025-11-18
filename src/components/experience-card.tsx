@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useCallback, useMemo, useRef, useState } from 'react'
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -7,14 +7,21 @@ import { Modal } from '@/components/modal'
 type Exp = { company: string; role: string; period: string; location: string; highlights: string[]; stack: string[] }
 export function ExperienceCard({ exp }: { exp: Exp }) {
   const [isOpen, setIsOpen] = useState(false)
+  const triggerRef = useRef<HTMLButtonElement>(null)
 
   const subtitle = useMemo(() => `${exp.company} • ${exp.period}`, [exp.company, exp.period])
+
+  const handleClose = useCallback(() => {
+    setIsOpen(false)
+    triggerRef.current?.blur()
+  }, [])
 
   return (
     <>
       <button
         type="button"
         onClick={() => setIsOpen(true)}
+        ref={triggerRef}
         className="group h-full w-full cursor-pointer text-left transition focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         aria-label={`Read more about ${exp.role} at ${exp.company}`}
         aria-expanded={isOpen}
@@ -54,7 +61,7 @@ export function ExperienceCard({ exp }: { exp: Exp }) {
           </CardContent>
         </Card>
       </button>
-      <Modal open={isOpen} onClose={() => setIsOpen(false)} title={exp.role} description={subtitle}>
+      <Modal open={isOpen} onClose={handleClose} title={exp.role} description={subtitle}>
         <div className="space-y-4">
           <div className="space-y-1 text-sm text-muted-foreground">
             <p>
