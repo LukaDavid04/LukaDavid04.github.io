@@ -8,6 +8,11 @@ export function Projects() {
   const [expanded, setExpanded] = React.useState<number | null>(null)
   const sectionRefs = React.useRef<Array<HTMLElement | null>>([])
 
+  const shouldIgnoreCardActivation = (target: EventTarget | null) => {
+    if (!(target instanceof HTMLElement)) return false
+    return Boolean(target.closest('a,button'))
+  }
+
   const toggle = (i: number) => {
     setExpanded((prev) => (prev === i ? null : i))
     // After expanding, scroll the section into view a bit below the header
@@ -15,6 +20,19 @@ export function Projects() {
       const el = sectionRefs.current[i]
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' })
     })
+  }
+
+  const handleCardClick = (event: React.MouseEvent<HTMLElement>, index: number) => {
+    if (shouldIgnoreCardActivation(event.target)) return
+    toggle(index)
+  }
+
+  const handleCardKeyDown = (event: React.KeyboardEvent<HTMLElement>, index: number) => {
+    if (shouldIgnoreCardActivation(event.target)) return
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault()
+      toggle(index)
+    }
   }
 
   return (
@@ -38,9 +56,14 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.35 }}
-              className={`relative overflow-hidden rounded-2xl border p-6 sm:p-8 shadow-lg transition hover:shadow-xl hover:-translate-y-0.5 ring-1 ring-transparent hover:ring-transparent dark:hover:ring-violet-500/30 ${
+              className={`relative overflow-hidden rounded-2xl border p-6 sm:p-8 shadow-lg transition hover:shadow-xl hover:-translate-y-0.5 ring-1 ring-transparent hover:ring-transparent dark:hover:ring-violet-500/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary ${
                 alt ? 'bg-gradient-to-b from-background/65 to-background/35' : 'bg-gradient-to-b from-background to-background/60'
               }`}
+              role="button"
+              tabIndex={0}
+              aria-expanded={isOpen}
+              onClick={(event) => handleCardClick(event, i)}
+              onKeyDown={(event) => handleCardKeyDown(event, i)}
             >
               {/* Hover teaser overlay */}
               {/* Neutral overlay on light; violet tint only in dark */}
