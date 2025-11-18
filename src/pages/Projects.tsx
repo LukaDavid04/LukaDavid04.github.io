@@ -53,7 +53,7 @@ export function Projects() {
                   <p className="mt-2 text-sm leading-6 text-muted-foreground">{p.desc}</p>
                 </div>
                 <div className="flex shrink-0 items-center gap-2">
-                  {p.href ? (
+                  {p.href && i !== 0 ? (
                     <Button asChild size="sm">
                       <a href={p.href} target="_blank" rel="noopener noreferrer">Open Link</a>
                     </Button>
