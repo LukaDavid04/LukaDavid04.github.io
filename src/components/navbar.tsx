@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Home,
   Briefcase,
@@ -48,12 +49,31 @@ export function Navbar() {
                 <Link
                   key={n.to}
                   to={n.to}
-                  className={`flex items-center gap-2 px-4 py-1.5 rounded-full text-sm border transition-all duration-150 ${
+                  className={`relative isolate flex items-center gap-2 overflow-hidden rounded-full border px-4 py-1.5 text-sm transition-all duration-200 ${
                     active
-                      ? "bg-foreground text-background border-foreground"
+                      ? "text-background shadow-lg shadow-primary/10 border-transparent"
                       : "bg-secondary/60 hover:bg-secondary/80 border-border/40"
                   }`}
                 >
+                  {active && (
+                    <motion.span
+                      layoutId="nav-active"
+                      className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-indigo-500/85 via-fuchsia-500/85 to-amber-400/85"
+                      transition={{ type: "spring", stiffness: 350, damping: 28 }}
+                    />
+                  )}
+                  <AnimatePresence>
+                    {active && (
+                      <motion.span
+                        key={`${n.to}-sheen`}
+                        className="absolute inset-y-0 left-[-40%] -z-10 w-[180%] skew-x-12 bg-white/25"
+                        initial={{ x: "-80%", opacity: 0 }}
+                        animate={{ x: "30%", opacity: 0.65 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                      />
+                    )}
+                  </AnimatePresence>
                   <Icon className="h-4 w-4" />
                   {n.label}
                 </Link>

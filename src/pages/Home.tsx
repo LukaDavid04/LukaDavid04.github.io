@@ -1,3 +1,4 @@
+import { useMemo, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import headshot from "@/assets/TennisHeadshot2.jpg";
@@ -5,9 +6,50 @@ import headshotDark from "@/assets/TennisHeadshotDark.png";
 import { PROFILE } from "@/lib/data/profile";
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
+import { Modal } from "@/components/modal";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 export function Home() {
+  const aboutCards = useMemo(
+    () => [
+      {
+        key: "project",
+        title: "Current Project",
+        subtitle: "This Portfolio",
+        description: "Check out a recent project I've been working on!",
+        cta: { label: "View projects", href: "/projects" },
+      },
+      {
+        key: "position",
+        title: "Current Position",
+        subtitle: "AiAware SWE",
+        description: "What I'm up to and where.",
+        cta: { label: "See experience", href: "/experience" },
+      },
+      {
+        key: "journal",
+        title: "Journal Highlight",
+        subtitle: "Achieving a dream goal",
+        description: "Take a dive into my personal side",
+        cta: { label: "Read the journal", href: "/journal/achieving-a-dream" },
+      },
+      {
+        key: "quick-bites",
+        title: "Quick bites",
+        subtitle: "A small pop-up story",
+        description:
+          "Title: \"In-yun\" (인연)\nText : \"In-yun\" (인연) is a Korean concept that signifies a fated or destined connection between people, suggesting that relationships have roots in past lives. It is believed that even brief encounters, like two strangers' clothes brushing, have a deeper meaning and have been shaped by a connection that spans many lifetimes. For example, a marriage is said to result from 8,000 layers of in-yun accumulated over 8,000 lives.",
+      },
+    ],
+    [],
+  );
+
   const summaryLines = PROFILE.summary.split("\n");
+  const [activeCardKey, setActiveCardKey] = useState<string | null>(null);
+  const activeCard = aboutCards.find((card) => card.key === activeCardKey);
+
+  const quickBite = aboutCards.find((card) => card.key === "quick-bites");
   return (
     <div className="grid lg:grid-cols-3 gap-6">
       <div className="lg:col-span-2 space-y-6">
@@ -92,25 +134,69 @@ export function Home() {
 
         <section>
           <h2 className="text-2xl font-semibold tracking-tight mb-3">
-            What I focus on
+            About Me
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">
-            {PROFILE.principles.map((b) => (
+            {aboutCards.map((card) => (
               <motion.div
-                key={b.title}
+                key={card.key}
                 initial={{ opacity: 0, y: 8 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.35 }}
               >
-                <Card className="hover:shadow-[0_3px_12px_rgba(99,102,241,0.14)] transition-all duration-300">
-                  <CardHeader className="pb-2">
-                    <CardTitle className="text-base">{b.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="text-sm text-muted-foreground">
-                    {b.body}
-                  </CardContent>
-                </Card>
+                <button
+                  type="button"
+                  onClick={() => setActiveCardKey(card.key)}
+                  className="block w-full text-left"
+                >
+                  <Card className="h-full hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(99,102,241,0.16)] transition-all duration-300">
+                    <CardHeader className="pb-2">
+                      <div className="flex items-center justify-between gap-3">
+                        <CardTitle className="text-base">{card.title}</CardTitle>
+                        <span className="text-xs rounded-full bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-500/10 dark:text-blue-100">
+                          {card.subtitle}
+                        </span>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="text-sm text-muted-foreground space-y-3">
+                      <p>
+                        {card.key === "quick-bites"
+                          ? "Tap for a short story."
+                          : "Opens a pop-up with details and a quick path to the page."}
+                      </p>
+                      {card.cta ? (
+                        <span className="inline-flex items-center gap-2 text-xs font-medium text-blue-600 dark:text-blue-300">
+                          Go to page
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-4 w-4"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                          </svg>
+                        </span>
+                      ) : (
+                        <span className="inline-flex items-center gap-2 text-xs font-medium text-emerald-600 dark:text-emerald-300">
+                          Quick bite
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-4 w-4"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                          </svg>
+                        </span>
+                      )}
+                    </CardContent>
+                  </Card>
+                </button>
               </motion.div>
             ))}
           </div>
@@ -159,6 +245,45 @@ export function Home() {
 
         {/* You can keep or customize your "Currently" card here if desired */}
       </div>
+
+      <Modal
+        open={Boolean(activeCard)}
+        onClose={() => setActiveCardKey(null)}
+        title={activeCard?.title}
+        description={activeCard?.subtitle}
+      >
+        {activeCard ? (
+          <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
+            {activeCard.key === "quick-bites" && quickBite ? (
+              <div className="space-y-2">
+                <p className="font-semibold text-foreground">{quickBite.description.split("\n")[0]}</p>
+                <p>{quickBite.description.split("\n").slice(1).join("\n")}</p>
+              </div>
+            ) : (
+              <p>{activeCard.description}</p>
+            )}
+
+            {activeCard.cta ? (
+              <div className="flex flex-wrap gap-3">
+                <Button asChild>
+                  <Link to={activeCard.cta.href}>
+                    {activeCard.cta.label}
+                  </Link>
+                </Button>
+                <Button variant="ghost" onClick={() => setActiveCardKey(null)}>
+                  Close
+                </Button>
+              </div>
+            ) : (
+              <div className="flex justify-end">
+                <Button variant="secondary" onClick={() => setActiveCardKey(null)}>
+                  Close
+                </Button>
+              </div>
+            )}
+          </div>
+        ) : null}
+      </Modal>
     </div>
   );
 }
