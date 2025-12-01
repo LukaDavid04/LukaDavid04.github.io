@@ -10,46 +10,78 @@ import { Modal } from "@/components/modal";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
+type AboutCard =
+  | {
+      key: "quick-bites";
+      kind: "modal";
+      title: string;
+      subtitle: string;
+      description: string;
+    }
+  | {
+      key: "project" | "position" | "journal";
+      kind: "link";
+      title: string;
+      subtitle: string;
+      description: string;
+      cta: { label: string; href: string };
+    };
+
 export function Home() {
-  const aboutCards = useMemo(
+  const aboutCards: AboutCard[] = useMemo(
     () => [
       {
         key: "project",
+        kind: "link",
         title: "Current Project",
         subtitle: "This Portfolio",
-        description: "Check out a recent project I've been working on!",
+        description: "Check out what's going on under the hood.",
         cta: { label: "View projects", href: "/projects" },
       },
       {
         key: "position",
+        kind: "link",
         title: "Current Position",
         subtitle: "AiAware SWE",
-        description: "What I'm up to and where.",
+        description: "What my day-to-day looks like.",
         cta: { label: "See experience", href: "/experience" },
       },
       {
         key: "journal",
+        kind: "link",
         title: "Journal Highlight",
         subtitle: "Achieving a dream goal",
-        description: "Take a dive into my personal side",
-        cta: { label: "Read the journal", href: "/journal/achieving-a-dream" },
+        description: "Editorial selection for this week.",
+        cta: {
+          label: "Read the journal",
+          href: "/journal/achieving-a-dream",
+        },
       },
       {
         key: "quick-bites",
+        kind: "modal",
         title: "Quick bites",
-        subtitle: "A small pop-up story",
+        subtitle: "Check back for more!",
         description:
-          "Title: \"In-yun\" (인연)\nText : \"In-yun\" (인연) is a Korean concept that signifies a fated or destined connection between people, suggesting that relationships have roots in past lives. It is believed that even brief encounters, like two strangers' clothes brushing, have a deeper meaning and have been shaped by a connection that spans many lifetimes. For example, a marriage is said to result from 8,000 layers of in-yun accumulated over 8,000 lives.",
+          "In-yun (From Past Lives): \n In-yun (인연), is a Korean concept that signifies a fated or destined connection between people, suggesting that relationships have roots in past lives. It is believed that even brief encounters, like two strangers' clothes brushing, have a deeper meaning and have been shaped by a connection that spans many lifetimes. For example, a marriage is said to result from 8,000 layers of in-yun accumulated over 8,000 lives.",
       },
     ],
-    [],
+    []
   );
 
   const summaryLines = PROFILE.summary.split("\n");
-  const [activeCardKey, setActiveCardKey] = useState<string | null>(null);
-  const activeCard = aboutCards.find((card) => card.key === activeCardKey);
+  const [activeCardKey, setActiveCardKey] = useState<"quick-bites" | null>(
+    null
+  );
 
-  const quickBite = aboutCards.find((card) => card.key === "quick-bites");
+  const quickBite = aboutCards.find(
+    (card): card is Extract<AboutCard, { key: "quick-bites" }> =>
+      card.key === "quick-bites"
+  );
+  const quickBiteLines = useMemo(
+    () => quickBite?.description.split("\n"),
+    [quickBite?.description]
+  );
   return (
     <div className="grid lg:grid-cols-3 gap-6">
       <div className="lg:col-span-2 space-y-6">
@@ -108,7 +140,9 @@ export function Home() {
                           title="2025 Men's Finalists"
                         >
                           <span className="medal-shimmer">{"🥈"}</span>
-                          <span className="annotation-tooltip top home-accent">{"2025 Men's Finalists"}</span>
+                          <span className="annotation-tooltip top home-accent">
+                            {"2025 Men's Finalists"}
+                          </span>
                         </span>
                         {after}
                       </span>
@@ -145,41 +179,25 @@ export function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.35 }}
               >
-                <button
-                  type="button"
-                  onClick={() => setActiveCardKey(card.key)}
-                  className="block w-full text-left"
-                >
-                  <Card className="h-full hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(99,102,241,0.16)] transition-all duration-300">
-                    <CardHeader className="pb-2">
-                      <div className="flex items-center justify-between gap-3">
-                        <CardTitle className="text-base">{card.title}</CardTitle>
-                        <span className="text-xs rounded-full bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-500/10 dark:text-blue-100">
-                          {card.subtitle}
-                        </span>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="text-sm text-muted-foreground space-y-3">
-                      <p>
-                        {card.key === "quick-bites"
-                          ? "Tap for a short story."
-                          : "Opens a pop-up with details and a quick path to the page."}
-                      </p>
-                      {card.cta ? (
-                        <span className="inline-flex items-center gap-2 text-xs font-medium text-blue-600 dark:text-blue-300">
-                          Go to page
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-4 w-4"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                          >
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                          </svg>
-                        </span>
-                      ) : (
+                {card.kind === "modal" ? (
+                  <button
+                    type="button"
+                    onClick={() => setActiveCardKey("quick-bites")}
+                    className="block w-full text-left"
+                  >
+                    <Card className="h-full hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(99,102,241,0.16)] transition-all duration-300">
+                      <CardHeader className="pb-2">
+                        <div className="flex items-center justify-between gap-3">
+                          <CardTitle className="text-base">
+                            {card.title}
+                          </CardTitle>
+                          <span className="text-xs rounded-full bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-500/10 dark:text-blue-100">
+                            {card.subtitle}
+                          </span>
+                        </div>
+                      </CardHeader>
+                      <CardContent className="text-sm text-muted-foreground space-y-3">
+                        <p>Something that crossed my mind recently.</p>
                         <span className="inline-flex items-center gap-2 text-xs font-medium text-emerald-600 dark:text-emerald-300">
                           Quick bite
                           <svg
@@ -190,13 +208,54 @@ export function Home() {
                             stroke="currentColor"
                             strokeWidth="2"
                           >
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                            />
                           </svg>
                         </span>
-                      )}
-                    </CardContent>
-                  </Card>
-                </button>
+                      </CardContent>
+                    </Card>
+                  </button>
+                ) : (
+                  <Link to={card.cta.href} className="block w-full text-left">
+                    <Card className="h-full hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(99,102,241,0.16)] transition-all duration-300">
+                      <CardHeader className="pb-2">
+                        <div className="flex items-center justify-between gap-3">
+                          <CardTitle className="text-base">
+                            {card.title}
+                          </CardTitle>
+                          <span className="text-xs rounded-full bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-500/10 dark:text-blue-100">
+                            {card.subtitle}
+                          </span>
+                        </div>
+                      </CardHeader>
+                      <CardContent className="text-sm text-muted-foreground space-y-3">
+                        <p>{card.description}</p>
+                        {card.cta ? (
+                          <span className="inline-flex items-center gap-2 text-xs font-medium text-blue-600 dark:text-blue-300">
+                            Go to page
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="h-4 w-4"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M9 5l7 7-7 7"
+                              />
+                            </svg>
+                          </span>
+                        ) : null}
+                      </CardContent>
+                    </Card>
+                  </Link>
+                )}
               </motion.div>
             ))}
           </div>
@@ -247,40 +306,28 @@ export function Home() {
       </div>
 
       <Modal
-        open={Boolean(activeCard)}
+        open={activeCardKey === "quick-bites" && Boolean(quickBite)}
         onClose={() => setActiveCardKey(null)}
-        title={activeCard?.title}
-        description={activeCard?.subtitle}
+        title={quickBite?.title}
+        description={quickBite?.subtitle}
       >
-        {activeCard ? (
+        {quickBite && quickBiteLines ? (
           <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
-            {activeCard.key === "quick-bites" && quickBite ? (
-              <div className="space-y-2">
-                <p className="font-semibold text-foreground">{quickBite.description.split("\n")[0]}</p>
-                <p>{quickBite.description.split("\n").slice(1).join("\n")}</p>
-              </div>
-            ) : (
-              <p>{activeCard.description}</p>
-            )}
+            <div className="space-y-2">
+              <p className="font-semibold text-foreground">
+                {quickBiteLines[0]}
+              </p>
+              <p>{quickBiteLines.slice(1).join("\n")}</p>
+            </div>
 
-            {activeCard.cta ? (
-              <div className="flex flex-wrap gap-3">
-                <Button asChild>
-                  <Link to={activeCard.cta.href}>
-                    {activeCard.cta.label}
-                  </Link>
-                </Button>
-                <Button variant="ghost" onClick={() => setActiveCardKey(null)}>
-                  Close
-                </Button>
-              </div>
-            ) : (
-              <div className="flex justify-end">
-                <Button variant="secondary" onClick={() => setActiveCardKey(null)}>
-                  Close
-                </Button>
-              </div>
-            )}
+            <div className="flex justify-end">
+              <Button
+                variant="secondary"
+                onClick={() => setActiveCardKey(null)}
+              >
+                Close
+              </Button>
+            </div>
           </div>
         ) : null}
       </Modal>
