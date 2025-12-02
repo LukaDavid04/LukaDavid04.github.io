@@ -33,7 +33,7 @@ export function Home() {
       {
         key: "project",
         kind: "link",
-        title: "Current Project",
+        title: "Recent Project",
         subtitle: "This Portfolio",
         description: "Check out what's going on under the hood.",
         cta: {
@@ -54,7 +54,7 @@ export function Home() {
         kind: "link",
         title: "Journal Highlight",
         subtitle: "Achieving a dream goal",
-        description: "Editorial selection for this week.",
+        description: "Editorial selection of the week.",
         cta: {
           label: "Read the journal",
           href: "/journal/achieving-a-dream",
@@ -171,7 +171,7 @@ export function Home() {
 
         <section>
           <h2 className="text-2xl font-semibold tracking-tight mb-3">
-            About Me
+            Dive in and Explore
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {aboutCards.map((card) => (
