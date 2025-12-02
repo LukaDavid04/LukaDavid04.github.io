@@ -1,15 +1,15 @@
 type Project = {
-  name: string
-  desc: string
-  tags: string[]
-  details: string
-  href?: string
-}
+  name: string;
+  desc: string;
+  tags: string[];
+  details: string;
+  href?: string;
+};
 
 export const PROJECTS: Project[] = [
   {
     name: "This Portfolio",
-    desc: "A lean, fast React + Vite portfolio with reusable UI, animations, and clean routing.",
+    desc: "A fast, accessible React and Vite portfolio with reusable UI, intentional motion, and tidy routing.",
     href: "https://lukadavid04.github.io/",
     tags: [
       "TypeScript",
@@ -20,18 +20,22 @@ export const PROJECTS: Project[] = [
       "React Router",
     ],
     details: `
-Overview
-Built this portfolio to be fast, accessible, and easy to extend. It uses a small, component-driven design with tasteful motion and a tidy route structure.
+**Overview**
+Designed and built this portfolio to be fast, accessible, and easy to extend. It follows a lean, component-driven architecture with consistent theming and subtle motion that supports the content rather than competing with it.
+**Headlines**
+⚡ Lightning-fast React + Vite foundation with lean TypeScript components
+🎨 Cohesive theming with purposeful motion and dark-mode polish
+🧭 Clear routing and navigation so every page is easy to explore
 
-At-a-glance
-- Lines of code: 1,610 (ts, tsx, css under src)
-- Pages: 6 (Home, Experience, Projects, Journal, Journal Detail, Layout)
-- Tech: TypeScript, React, Vite, Tailwind CSS, Framer Motion, React Router
+**At a Glance**
+- 6 pages (Home, Experience, Projects, Journal, Journal Detail, Layout)
+- TypeScript, React, Vite, Tailwind CSS, Framer Motion, React Router
 
-Highlights
-- Reusable UI primitives (cards, badges, modal) and consistent styling
-- Responsive design with utility-first CSS and sensible defaults
-- Lightweight animations with Framer Motion; quick initial load via Vite
+**Highlights**
+- Reusable UI primitives (cards, badges, modal) with consistent styling and dark-mode support
+- Responsive layouts with utility-first CSS and accessible navigation components
+- Lightweight Framer Motion animations and Vite-powered builds for quick loads and smooth transitions
+- Performance-first bundling, prefetching, and semantic HTML for accessibility
 `.trim(),
   },
   {
@@ -70,4 +74,4 @@ Notes
 Add the repository link to this card to enable the Open Link button.
 `.trim(),
   },
-]
+];

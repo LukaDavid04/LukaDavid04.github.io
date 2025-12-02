@@ -128,11 +128,23 @@ export function Projects() {
                     transition={{ duration: 0.25 }}
                     className="mt-5 space-y-3 text-sm leading-6"
                   >
-                    {(p.details ?? '').split('\n').map((line, idx) => (
-                      <p key={idx} className="whitespace-pre-wrap">
-                        {line}
-                      </p>
-                    ))}
+                    {(p.details ?? '').split('\n').map((line, idx) => {
+                      const boldMatch = line.match(/^\*\*(.+)\*\*$/)
+
+                      if (boldMatch) {
+                        return (
+                          <p key={idx} className="font-semibold">
+                            {boldMatch[1]}
+                          </p>
+                        )
+                      }
+
+                      return (
+                        <p key={idx} className="whitespace-pre-wrap">
+                          {line}
+                        </p>
+                      )
+                    })}
                   </motion.div>
                 ) : null}
               </AnimatePresence>
