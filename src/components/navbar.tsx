@@ -58,7 +58,7 @@ export function Navbar() {
                   {active && (
                     <motion.span
                       layoutId="nav-active"
-                      className="absolute inset-0 -z-10 rounded-full bg-black"
+                      className="absolute inset-0 -z-10 rounded-full bg-black dark:bg-white"
                       transition={{ type: "spring", stiffness: 350, damping: 28 }}
                     />
                   )}
