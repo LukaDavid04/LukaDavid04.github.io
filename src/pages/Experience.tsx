@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { EXPERIENCE } from "@/lib/data/experience";
 import { ExperienceCard } from "@/components/experience-card";
 import { motion } from "framer-motion";
@@ -5,6 +6,10 @@ import { motion } from "framer-motion";
 export function Experience() {
   const currentExperience = EXPERIENCE.find((e) => e.company === "AiAware");
   const previousExperience = EXPERIENCE.filter((e) => e.company !== "AiAware");
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, []);
 
   return (
     <section>
@@ -17,6 +22,7 @@ export function Experience() {
       </p>
       {currentExperience && (
         <motion.div
+          id="current-role"
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

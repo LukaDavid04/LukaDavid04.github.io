@@ -36,7 +36,10 @@ export function Home() {
         title: "Current Project",
         subtitle: "This Portfolio",
         description: "Check out what's going on under the hood.",
-        cta: { label: "View projects", href: "/projects" },
+        cta: {
+          label: "View projects",
+          href: "/projects?project=this-portfolio",
+        },
       },
       {
         key: "position",

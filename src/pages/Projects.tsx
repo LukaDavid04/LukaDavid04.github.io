@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useSearchParams } from 'react-router-dom'
 import { PROJECTS } from '@/lib/data/projects'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -7,6 +8,7 @@ import { Button } from '@/components/ui/button'
 export function Projects() {
   const [expanded, setExpanded] = React.useState<number | null>(null)
   const sectionRefs = React.useRef<Array<HTMLElement | null>>([])
+  const [searchParams] = useSearchParams()
 
   const shouldIgnoreCardActivation = (target: EventTarget | null) => {
     if (!(target instanceof HTMLElement)) return false
@@ -21,6 +23,21 @@ export function Projects() {
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' })
     })
   }
+
+  React.useEffect(() => {
+    const slugify = (value: string) => value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+    const projectSlug = searchParams.get('project')
+    if (!projectSlug) return
+
+    const targetIndex = PROJECTS.findIndex((project) => slugify(project.name) === projectSlug)
+    if (targetIndex === -1) return
+
+    setExpanded(targetIndex)
+    queueMicrotask(() => {
+      const el = sectionRefs.current[targetIndex]
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' })
+    })
+  }, [searchParams])
 
   const handleCardClick = (event: React.MouseEvent<HTMLElement>, index: number) => {
     if (shouldIgnoreCardActivation(event.target)) return
