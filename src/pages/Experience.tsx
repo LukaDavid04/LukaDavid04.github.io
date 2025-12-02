@@ -28,13 +28,21 @@ export function Experience() {
           viewport={{ once: true }}
           transition={{ duration: 0.35 }}
         >
-          <ExperienceCard exp={currentExperience} />
+          <ExperienceCard
+            exp={currentExperience}
+            highlightLimit={currentExperience.highlights.length}
+          />{" "}
         </motion.div>
       )}
 
-      <h2 className="text-[1.66rem] font-semibold tracking-tight mt-8 mb-4">
-        Past Roles
-      </h2>
+      <div className="mt-8 mb-4 space-y-1">
+        <h2 className="flex justify-between items-center text-[1.66rem] font-semibold tracking-tight">
+          Past Roles
+          <span className="inline-flex items-center text-xs font-semibold sm:text-sm text-transparent bg-gradient-to-r from-indigo-400 via-fuchsia-400 to-amber-400 bg-[length:200%_auto] bg-clip-text opacity-80 animate-shimmerSlow">
+            (Click to expand)
+          </span>
+        </h2>
+      </div>
       <div className="grid md:grid-cols-2 gap-4">
         {previousExperience.map((e, i) => (
           <motion.div

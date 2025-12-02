@@ -64,7 +64,10 @@ export default <Config>{
           "100%": { transform: "translateY(0) rotate(0deg)" },
         },
         sparkle: {
-          "0%, 100%": { opacity: "0.3", transform: "translateY(0) scale(0.95)" },
+          "0%, 100%": {
+            opacity: "0.3",
+            transform: "translateY(0) scale(0.95)",
+          },
           "50%": { opacity: "1", transform: "translateY(-2px) scale(1)" },
         },
         draw: {
@@ -88,17 +91,26 @@ export default <Config>{
         page1: {
           "0%": { opacity: "0", transform: "translate(0,0) rotate(0deg)" },
           "10%": { opacity: "1" },
-          "100%": { opacity: "1", transform: "translate(220px,-20px) rotate(-12deg)" },
+          "100%": {
+            opacity: "1",
+            transform: "translate(220px,-20px) rotate(-12deg)",
+          },
         },
         page2: {
           "0%": { opacity: "0", transform: "translate(0,0) rotate(4deg)" },
           "10%": { opacity: "1" },
-          "100%": { opacity: "1", transform: "translate(230px,-6px) rotate(-6deg)" },
+          "100%": {
+            opacity: "1",
+            transform: "translate(230px,-6px) rotate(-6deg)",
+          },
         },
         page3: {
           "0%": { opacity: "0", transform: "translate(0,0) rotate(-6deg)" },
           "10%": { opacity: "1" },
-          "100%": { opacity: "1", transform: "translate(210px,6px) rotate(-3deg)" },
+          "100%": {
+            opacity: "1",
+            transform: "translate(210px,6px) rotate(-3deg)",
+          },
         },
         screenPulse: {
           "0%": { opacity: "0.25" },
@@ -118,6 +130,7 @@ export default <Config>{
       animation: {
         enter: "enter .35s ease-out",
         shimmer: "shimmer 4s linear infinite",
+        shimmerSlow: "shimmer 8s linear infinite",
         float: "float 3s ease-in-out infinite",
         bubble: "bubble 1.4s ease-in-out infinite",
         sheet: "sheet 2.4s ease-in-out infinite",
