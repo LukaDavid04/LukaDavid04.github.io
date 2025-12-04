@@ -39,4 +39,13 @@ It’s funny to think about now, but Ryan and I used to dream about having the u
       },
     ],
   },
+  // {
+  //   slug: "url-structure-for-seo",
+  //   title: "-",
+  //   date: "2025-10-11",
+  //   tags: ["Teamwork", "Leadership", "Patience"],
+  //   excerpt: "Brief Description.",
+  //   content: `Main Text`.trim(),
+  //   comments: [],
+  // },
 ] as const;
