@@ -47,9 +47,9 @@ Designed and built this portfolio to be fast, accessible, and easy to extend. It
 I lead the uOttawa varsity tennis web dev squad delivering the public site and internal analytics for coaches and players.
 
 **Headlines**
-- 🧭 Roadmap ownership with coaches and execs; translate needs into releases
-- 🛡️ Engineering quality guardrails: standards, reviews, docs, and CI hygiene
-- 🚀 Delivery of site updates and analytics workflows that support match prep
+🧭 Roadmap ownership with coaches and execs; translate needs into releases
+🛡️ Engineering quality guardrails: standards, reviews, docs, and CI hygiene
+🚀 Delivery of site updates and analytics workflows that support match prep
 
 **At a Glance**
 - Scope: marketing site, roster/news updates, analytics dashboards, internal tools
@@ -71,9 +71,9 @@ I lead the uOttawa varsity tennis web dev squad delivering the public site and i
 Fitshare is my capstone project. I led backend architecture while keeping the team moving as Scrum Master.
 
 **Headlines**
-- 🧭 Scrum ownership: sprint planning, backlog hygiene, velocity tracking, retros
-- 🛠️ Backend lead: service/API design, data modeling, auth, and testing strategy
-- ⚙️ DevEx: CI setup, review standards, and developer docs to speed onboarding
+🤝 Scrum ownership: sprint planning, backlog hygiene, velocity tracking, retros
+🛠️ Backend lead: service/API design, data modeling, auth, and testing strategy
+⚙️ DevEx: CI setup, review standards, and developer docs to speed onboarding
 
 **At a Glance**
 - Scope: mobile + API, user auth, content sharing, and usage analytics
