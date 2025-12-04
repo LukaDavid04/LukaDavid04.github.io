@@ -180,30 +180,42 @@ Designed and built this portfolio to be fast, accessible, and easy to extend. It
 - Responsive layouts with utility-first CSS and accessible navigation components
 - Lightweight Framer Motion animations and Vite-powered builds for quick loads and smooth transitions
 - Performance-first bundling, prefetching, and semantic HTML for accessibility
-`.trim()},{name:"uOttawa Tennis — Web Dev Team",desc:"Lead a team building the team website and analytics tools; coordinate roadmap, code quality, and delivery.",tags:["Leadership","Project Management","Web Dev","Analytics"],details:`
-Scope
-I manage the university tennis web development team delivering the website and internal analytical tools.
+`.trim()},{name:"uOttawa Tennis - Web Dev Team",desc:"Lead the varsity tennis web dev squad delivering the public site and analytics; own roadmap, quality, and delivery.",tags:["Leadership","Product Strategy","Web Dev","Analytics","Ops"],details:`
+**Overview**
+I lead the uOttawa varsity tennis web dev squad delivering the public site and internal analytics for coaches and players.
 
-Responsibilities
-- Roadmap ownership: define goals, priorities, and milestones with stakeholders
-- Team leadership: task breakdown, sprint planning, and unblock teammates
-- Engineering quality: reviews, standards, docs, and CI hygiene
-- Delivery: ship site features and analytics dashboards used by coaches/players
+**Headlines**
+🧭 Roadmap ownership with coaches and execs; translate needs into releases
+🛡️ Engineering quality guardrails: standards, reviews, docs, and CI hygiene
+🚀 Delivery of site updates and analytics workflows that support match prep
 
-Impact
-- Faster iteration cycles and clearer ownership
-- Higher reliability of analytics used for match preparation and review
-`.trim()},{name:"Fitshare (Capstone)",desc:"Capstone project where I served as Scrum Master and Backend Lead.",tags:["Scrum","Backend","API","Capstone"],details:`
-Overview
-Fitshare is my capstone project; I led backend architecture while serving as Scrum Master.
+**At a Glance**
+- Scope: marketing site, roster/news updates, analytics dashboards, internal tools
+- Team: small student dev group with clear roles, issues, and demo cadence
+- Rhythm: sprint planning, standups, demos, and retros that keep shipping velocity high
 
-Contributions
-- Scrum: sprint planning, backlog grooming, velocity tracking, and retros
-- Backend: service/API design, data modeling, auth, and testing strategy
-- DevEx: CI setup, code review standards, and developer documentation
+**Highlights**
+- Reworked the site layout and content structure for quicker publishing and better accessibility
+- Built analytics dashboards to surface match stats and lineup notes for prep and review
+- Introduced release checklists, templates, and automated lint/test gates to keep quality consistent
+`.trim()},{name:"Fitshare (Capstone)",desc:"Capstone project where I led backend architecture and kept the team unblocked as Scrum Master.",tags:["Scrum","Backend","API","DevEx","Capstone"],details:`
+**Overview**
+Fitshare is my capstone project. I led backend architecture while keeping the team moving as Scrum Master.
 
-Notes
-Add the repository link to this card to enable the Open Link button.
+**Headlines**
+🤝 Scrum ownership: sprint planning, backlog hygiene, velocity tracking, retros
+🛠️ Backend lead: service/API design, data modeling, auth, and testing strategy
+⚙️ DevEx: CI setup, review standards, and developer docs to speed onboarding
+
+**At a Glance**
+- Scope: mobile + API, user auth, content sharing, and usage analytics
+- Team: multi-role student team with paired work on critical paths
+- Rhythm: two-week sprints with demos, retros, and actioned follow-ups
+
+**Highlights**
+- Shipped stable auth + core API with tests and monitoring hooks
+- Built CI flows that lint, test, and gate PRs before merge
+- Created developer docs and templates to shorten onboarding and handoffs
 `.trim()}];function ZP(){const[n,r]=b.useState(null),i=b.useRef([]),[s]=vw(),l=p=>p instanceof HTMLElement?!!p.closest("a,button"):!1,d=p=>{r(m=>m===p?null:p),queueMicrotask(()=>{const m=i.current[p];m&&m.scrollIntoView({behavior:"smooth",block:"start",inline:"nearest"})})};b.useEffect(()=>{const p=v=>v.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,""),m=s.get("project");if(!m)return;const g=_m.findIndex(v=>p(v.name)===m);g!==-1&&(r(g),queueMicrotask(()=>{const v=i.current[g];v&&v.scrollIntoView({behavior:"smooth",block:"start",inline:"nearest"})}))},[s]);const c=(p,m)=>{l(p.target)||d(m)},h=(p,m)=>{l(p.target)||(p.key==="Enter"||p.key===" ")&&(p.preventDefault(),d(m))};return S.jsxs("section",{children:[S.jsxs("header",{className:"mb-10",children:[S.jsx("p",{className:"text-xs uppercase tracking-widest text-muted-foreground",children:"Passion Projects"}),S.jsx("h1",{className:"mt-1 text-3xl sm:text-4xl font-semibold tracking-tight",children:"Passion Projects"}),S.jsx("p",{className:"mt-2 max-w-2xl text-sm text-muted-foreground",children:"Browse projects and expand any entry to read more. Use the link to visit the live site or repository."})]}),S.jsx("div",{className:"space-y-6",children:_m.map((p,m)=>{const g=n===m,v=m%2===1;return S.jsxs(qr.section,{ref:x=>i.current[m]=x,layout:!0,initial:{opacity:0,y:10},whileInView:{opacity:1,y:0},viewport:{once:!0,amount:.2},transition:{duration:.35},className:`relative overflow-hidden rounded-2xl border p-6 sm:p-8 shadow-lg transition hover:shadow-xl hover:-translate-y-0.5 ring-1 ring-transparent hover:ring-transparent dark:hover:ring-violet-500/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary ${v?"bg-gradient-to-b from-background/65 to-background/35":"bg-gradient-to-b from-background to-background/60"}`,role:"button",tabIndex:0,"aria-expanded":g,onClick:x=>c(x,m),onKeyDown:x=>h(x,m),children:[S.jsx("div",{className:"pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 hover:opacity-[0.03] dark:opacity-0 dark:hover:opacity-[0.04]",style:{background:"radial-gradient(600px 200px at 80% -10%, transparent, transparent)"}}),S.jsx("div",{className:"pointer-events-none absolute inset-0 hidden opacity-0 transition-opacity duration-300 dark:block dark:hover:opacity-[0.05]",style:{background:"radial-gradient(600px 200px at 80% -10%, rgba(139,92,246,0.6), transparent)"}}),S.jsxs("div",{className:"flex items-start justify-between gap-4",children:[S.jsxs("div",{children:[S.jsx("h2",{className:"text-2xl font-semibold tracking-tight",children:p.name}),S.jsx("p",{className:"mt-2 text-sm leading-6 text-muted-foreground",children:p.desc})]}),S.jsxs("div",{className:"flex shrink-0 items-center gap-2",children:[p.href&&m!==0?S.jsx(fd,{asChild:!0,size:"sm",children:S.jsx("a",{href:p.href,target:"_blank",rel:"noopener noreferrer",children:"Open Link"})}):null,S.jsx("button",{onClick:()=>d(m),"aria-expanded":g,className:"text-sm underline underline-offset-4 hover:opacity-80",children:g?"Show less":"Read more →"})]})]}),S.jsx("div",{className:"mt-3 flex flex-wrap gap-2",children:p.tags.map(x=>S.jsx(Qr,{variant:"secondary",className:"rounded-full px-2 py-0.5 text-[10px]",children:x},x))}),S.jsx(Cw,{initial:!1,children:g?S.jsx(qr.div,{initial:{opacity:0,height:0,y:-6},animate:{opacity:1,height:"auto",y:0},exit:{opacity:0,height:0,y:-6},transition:{duration:.25},className:"mt-5 space-y-3 text-sm leading-6",children:(p.details??"").split(`
 `).map((x,k)=>{const D=x.match(/^\*\*(.+)\*\*$/);return D?S.jsx("p",{className:"font-semibold",children:D[1]},k):S.jsx("p",{className:"whitespace-pre-wrap",children:x},k)})},"details"):null})]},p.name)})})]})}const zy=b.forwardRef(({className:n,...r},i)=>S.jsx("input",{ref:i,className:wr("flex h-9 w-full rounded-md border bg-background px-3 py-1 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-1",n),...r}));zy.displayName="Input";const Sc=[{slug:"achieving-a-dream",title:"Achieving a Dream Goal",date:"2025-10-11",tags:["Teamwork","Leadership","Patience"],excerpt:"What it meant to my team to make the finals of the Ontario University Athletics tennis tournament.",content:`
 In first year, I used to get up at 5:00 am for practice. The cafeteria was closed, so I would bring a mug of cheerios with me as I waited in the freezing temperatures to get picked up by my best friend and club president Ryan.
