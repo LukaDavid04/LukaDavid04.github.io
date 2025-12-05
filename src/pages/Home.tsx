@@ -306,6 +306,35 @@ export function Home() {
         </div>
 
         {/* You can keep or customize your "Currently" card here if desired */}
+        {/* <div className="rounded-2xl border bg-card shadow-sm transition-shadow duration-200 hover:shadow-md dark:shadow-sm dark:transition-shadow dark:hover:shadow-[0_10px_24px_-20px_rgba(255,255,255,0.12)] dark:hover:ring-1 dark:hover:ring-white/10">
+          <div className="p-6 pb-4">
+            <h3 className="text-lg font-semibold tracking-tight">Education</h3>
+            <p className="text-sm text-muted-foreground mt-1">
+              {PROFILE.education.school}
+            </p>
+
+            <div className="mt-4 space-y-2">
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <p className="text-sm text-muted-foreground">Program</p>
+                  <p className="font-medium leading-tight">
+                    {PROFILE.education.program}
+                  </p>
+                </div>
+                <Badge
+                  variant="secondary"
+                  className="rounded-full whitespace-nowrap"
+                >
+                  {PROFILE.education.distinction}
+                </Badge>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Graduated with academic distinction, balancing engineering,
+                leadership, and athletics.
+              </p>
+            </div>
+          </div>
+        </div> */}
       </div>
 
       <Modal

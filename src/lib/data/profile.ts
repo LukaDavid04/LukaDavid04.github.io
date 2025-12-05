@@ -25,6 +25,11 @@ export const PROFILE = {
     "Learning more about networking + distributed systems.",
     "Coaching tennis & running on weekends.",
   ],
+  education: {
+    school: "University of Ottawa",
+    program: "Honours B.Sc. in Computer Science",
+    distinction: "Magna Cum Laude",
+  },
   principles: [
     {
       title: "Clarity over cleverness",
