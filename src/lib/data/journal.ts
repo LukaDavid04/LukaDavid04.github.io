@@ -1,3 +1,5 @@
+import { BellRing } from "lucide-react";
+
 export type JournalEntryComment = {
   paragraph: number;
   wordIndex: number;
@@ -13,6 +15,15 @@ export type JournalEntryType = {
   content: string;
   comments?: readonly JournalEntryComment[];
 };
+
+// Things to Journal about
+// - Gamewinner at home MBB
+// - Graduating - What you do for a ring
+// - Convocation
+// - Iron Ring Ceremony
+// - Reading Atomic Habits
+// - Art of War
+// - Growing a private buisness
 
 export const JOURNAL: readonly JournalEntryType[] = [
   {
@@ -39,6 +50,16 @@ It’s funny to think about now, but Ryan and I used to dream about having the u
       },
     ],
   },
+  // {
+  //   slug: "the-things-you-dont-think-about",
+  //   title: "The Things you Don't Think About",
+  //   date: "2024-10-24",
+  //   tags: ["Writing", "High-school", "Reflection"],
+  //   excerpt: "Things change when you move away, and not always for the better.",
+  //   content: `Main Text`.trim(),
+  //   comments: [],
+  // },
+
   // {
   //   slug: "url-structure-for-seo",
   //   title: "-",
