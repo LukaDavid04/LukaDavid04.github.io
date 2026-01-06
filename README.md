@@ -10,7 +10,7 @@ This repository now spotlights the project I showcase on my resume and demo call
 
 ## 📌 Why I Built This Portfolio
 
-- **Tell a cohesive story** – After hopping between assignments, games, and crypto puzzles, I needed one destination that clearly explains who I am, what I value, and why the odd mix of projects makes sense.
+- **Tell my whole story** – It's hard to fit everything about you into one page. (I don't even think I could fit it all on three). This portfolio is designed to give those who are curious easy access to my experiences, projects, and personality.
 - **Blend engineering with journaling** – Writing reflections keeps me honest about growth. The site surfaces those notes next to case studies so hiring managers can see my process, not just polished screenshots.
 - **Keep shipping in public** – By versioning the portfolio here, I can track every iteration (from typography tweaks to data modeling) and treat the site itself as an evolving product.
 
@@ -97,6 +97,6 @@ npm run preview
 
 ## 📝 License
 
-## The broader repository is MIT-licensed; the portfolio inherits the same. See [LICENSE](LICENSE) for details.
+#### The broader repository is MIT-licensed; the portfolio inherits the same. See [LICENSE](LICENSE) for details.
 
 Thanks for visiting my personal portfolio codebase! If something sparks your curiosity, feel free to open an issue or drop me a note through the site’s contact section.
