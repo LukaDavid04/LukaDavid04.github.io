@@ -1,8 +1,10 @@
 import { useMemo, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import headshot from "@/assets/TennisHeadshot2.jpg";
-import headshotDark from "@/assets/TennisHeadshotDark.png";
+import headshot320 from "@/assets/TennisHeadshot2-320.jpg";
+import headshot640 from "@/assets/TennisHeadshot2-640.jpg";
+import headshotDark320 from "@/assets/TennisHeadshotDark-320.png";
+import headshotDark640 from "@/assets/TennisHeadshotDark-640.png";
 import { PROFILE } from "@/lib/data/profile";
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
@@ -89,8 +91,8 @@ export function Home() {
     <div className="grid lg:grid-cols-3 gap-6">
       <div className="lg:col-span-2 space-y-6">
         <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.4 }}
         >
           <Card className="overflow-hidden">
@@ -103,20 +105,28 @@ export function Home() {
               <div className="absolute -bottom-10 left-6 h-40 w-40 sm:h-29 sm:w-29 rounded-3xl ring-2 ring-white/70 dark:ring-black/40 shadow-xl overflow-hidden flex items-center justify-center">
                 {/* Swap headshots based on theme using Tailwind dark: classes */}
                 <img
-                  loading="lazy"
-                  decoding="async"
-                  fetchPriority="low"
-                  src={headshot}
+                  loading="eager"
+                  decoding="sync"
+                  fetchPriority="high"
+                  src={headshot320}
+                  srcSet={`${headshot320} 320w, ${headshot640} 640w`}
+                  sizes="160px"
                   alt="Luka"
-                  className="h-full w-full object-cover block dark:hidden"
+                  width={320}
+                  height={320}
+                  className="h-full w-full object-cover block dark:hidden [image-rendering:auto] [backface-visibility:hidden] [transform:translateZ(0)]"
                 />
                 <img
-                  loading="lazy"
-                  decoding="async"
-                  fetchPriority="low"
-                  src={headshotDark}
+                  loading="eager"
+                  decoding="sync"
+                  fetchPriority="high"
+                  src={headshotDark320}
+                  srcSet={`${headshotDark320} 320w, ${headshotDark640} 640w`}
+                  sizes="160px"
                   alt="Luka"
-                  className="h-full w-full object-cover hidden dark:block"
+                  width={320}
+                  height={320}
+                  className="h-full w-full object-cover hidden dark:block [image-rendering:auto] [backface-visibility:hidden] [transform:translateZ(0)]"
                 />
               </div>
             </div>
