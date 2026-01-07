@@ -6,6 +6,12 @@ export type JournalEntryComment = {
   text: string;
 };
 
+export type JournalEntryLink = {
+  paragraph: number;
+  wordIndex: number;
+  href: string;
+};
+
 export type JournalEntryType = {
   slug: string;
   title: string;
@@ -14,6 +20,7 @@ export type JournalEntryType = {
   excerpt: string;
   content: string;
   comments?: readonly JournalEntryComment[];
+  links?: readonly JournalEntryLink[];
 };
 
 // Things to Journal about
@@ -54,6 +61,13 @@ It’s funny to think about now, but Ryan and I used to dream about having the u
         text: "literally",
       },
     ],
+    // links: [
+    //   {
+    //     paragraph: 0,
+    //     wordIndex: 24,
+    //     href: "https://en.wikipedia.org/wiki/Cheerio_(brand)",
+    //   },
+    // ],
   },
   // {
   //   slug: "the-things-you-dont-think-about",

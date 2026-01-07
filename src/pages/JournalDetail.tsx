@@ -22,6 +22,13 @@ export function JournalDetail() {
     ] as const),
   );
 
+  const linkMap = new Map(
+    (entry.links ?? []).map((link) => [
+      `${link.paragraph}-${link.wordIndex}`,
+      link,
+    ] as const),
+  );
+
   return (
     <article className="max-w-3xl">
       <Link to="/journal" className="inline-flex items-center gap-2 text-sm underline mb-4">
@@ -44,15 +51,30 @@ export function JournalDetail() {
                 }
 
                 const comment = commentMap.get(`${paragraphIndex}-${wordCount}`);
+                const link = linkMap.get(`${paragraphIndex}-${wordCount}`);
                 const wordKey = `${paragraphIndex}-word-${tokenIndex}`;
-                const wordElement = comment ? (
-                  <span key={wordKey} className="annotation-word" tabIndex={0}>
+                let wordElement = comment ? (
+                  <span key={`${wordKey}-annotation`} className="annotation-word" tabIndex={0}>
                     {token}
                     <span className="annotation-tooltip">{comment.text}</span>
                   </span>
                 ) : (
                   <span key={wordKey}>{token}</span>
                 );
+
+                if (link) {
+                  wordElement = (
+                    <a
+                      key={`${wordKey}-link`}
+                      href={link.href}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="underline decoration-2 underline-offset-4 text-primary hover:text-primary/80"
+                    >
+                      {wordElement}
+                    </a>
+                  );
+                }
 
                 wordCount += 1;
                 return wordElement;
