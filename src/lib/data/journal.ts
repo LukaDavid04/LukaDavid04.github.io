@@ -2,7 +2,8 @@ import { BellRing } from "lucide-react";
 
 export type JournalEntryComment = {
   paragraph: number;
-  wordIndex: number;
+  target: string;
+  occurrence?: number;
   text: string;
 };
 
@@ -52,12 +53,12 @@ It’s funny to think about now, but Ryan and I used to dream about having the u
     comments: [
       {
         paragraph: 0,
-        wordIndex: 32,
+        target: "cheerios",
         text: "literally",
       },
       {
-        paragraph: 0,
-        wordIndex: 81,
+        paragraph: 2,
+        target: "dream about",
         text: "literally",
       },
     ],
