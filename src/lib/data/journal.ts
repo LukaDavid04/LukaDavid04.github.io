@@ -53,7 +53,7 @@ It’s funny to think about now, but Ryan and I used to dream about having the u
     comments: [
       {
         paragraph: 0,
-        target: "cheerios",
+        target: "freezing",
         text: "literally",
       },
       {
