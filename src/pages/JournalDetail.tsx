@@ -31,6 +31,22 @@ export function JournalDetail() {
       <h1 className="text-3xl font-semibold tracking-tight">{entry.title}</h1>
       <div className="text-xs text-muted-foreground mt-1">{new Date(entry.date).toLocaleDateString()}</div>
 
+      {entry.image ? (
+        <figure className="mt-6">
+          <img
+            src={entry.image.src}
+            alt={entry.image.alt}
+            className="w-full rounded-lg border bg-muted/30"
+            loading="lazy"
+          />
+          {entry.image.caption ? (
+            <figcaption className="mt-2 text-xs text-muted-foreground">
+              {entry.image.caption}
+            </figcaption>
+          ) : null}
+        </figure>
+      ) : null}
+
       <div className="prose prose-sm sm:prose-base dark:prose-invert mt-6">
         {entry.content.split("\n\n").map((paragraph, paragraphIndex) => {
           const tokens = paragraph.split(/(\s+)/);

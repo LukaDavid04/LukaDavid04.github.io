@@ -1,4 +1,5 @@
 import { BellRing } from "lucide-react";
+import ggphoto from "@/assets/ggtennisc.jpg";
 
 export type JournalEntryComment = {
   paragraph: number;
@@ -20,6 +21,11 @@ export type JournalEntryType = {
   tags: readonly string[];
   excerpt: string;
   content: string;
+  image?: {
+    src: string;
+    alt: string;
+    caption?: string;
+  };
   comments?: readonly JournalEntryComment[];
   links?: readonly JournalEntryLink[];
 };
@@ -41,6 +47,12 @@ export const JOURNAL: readonly JournalEntryType[] = [
     tags: ["Teamwork", "Leadership", "Patience"],
     excerpt:
       "What it meant to my team to make the finals of the Ontario University Athletics tennis tournament.",
+    image: {
+      src: ggphoto,
+      alt: "Gee-Gee's Men's Tennis Team lands the Silver Medal.",
+      caption:
+        "Not my most flattering angle, but a moment I will never forget.",
+    },
     content: `
 In first year, I used to get up at 5:00 am for practice. The cafeteria was closed, so I would bring a mug of cheerios with me as I waited in the freezing temperatures to get picked up by my best friend and club president Ryan.
 

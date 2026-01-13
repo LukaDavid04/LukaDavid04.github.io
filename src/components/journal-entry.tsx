@@ -11,6 +11,16 @@ export function JournalEntry({ entry }: { entry: JournalEntryType }) {
           <CardTitle className="text-lg">{entry.title}</CardTitle>
         </CardHeader>
         <CardContent>
+          {entry.image ? (
+            <div className="mb-3 overflow-hidden rounded-md border bg-muted/30">
+              <img
+                src={entry.image.src}
+                alt={entry.image.alt}
+                className="h-40 w-full object-cover transition-transform duration-200 group-hover:scale-[1.02]"
+                loading="lazy"
+              />
+            </div>
+          ) : null}
           <div className="text-xs text-muted-foreground">
             {new Date(entry.date).toLocaleDateString()}
           </div>
