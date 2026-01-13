@@ -48,7 +48,7 @@ In first year, I used to get up at 5:00 am for practice. The cafeteria was close
 At first we weren’t even part of the university. We were a club filled with talented individuals and big ideas. It took a long time for us to get anywhere close to being part of the university. Three years to be exact. There were so many meetings, emails, practices, tryouts, and early mornings before we got our first real chance to become a varsity team. 
 
 
-It’s funny to think about now, but Ryan and I used to dream about having the uOttawa crest on our shirts. We would always bounce ideas back and forth about how we could get to that finish line, and what it would mean to us. To be able to compete on the highest level of collegiate tennis in Canada felt far far away. As nostalgic as the old club logo is now (and a collector’s piece of merch in my eyes), we weren’t Gee-Gees yet. A lot came with the name. There was responsibility, ownership, liability, and solvency just to name a few.
+It’s funny to think about now, but Ryan and I used to dream about having the uOttawa crest on our shirts. We would always bounce ideas back and forth about how we could get to that finish line, and what it would mean to us. To be able to compete on the highest level of collegiate tennis in Canada felt far far away. As nostalgic as the old club logo is now, we weren’t Gee-Gees yet. A lot came with the name. There was responsibility, ownership, liability, and solvency just to name a few.
 `.trim(),
     comments: [
       {
@@ -58,8 +58,8 @@ It’s funny to think about now, but Ryan and I used to dream about having the u
       },
       {
         paragraph: 2,
-        target: "dream about",
-        text: "literally",
+        target: "old club logo",
+        text: "a collector's piece of merch in my eyes",
       },
     ],
     // links: [
