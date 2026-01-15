@@ -2,8 +2,8 @@ import * as React from "react";
 import { Input } from "@/components/ui/input";
 import { JOURNAL } from "@/lib/data/journal";
 import { JournalEntry } from "@/components/journal-entry";
-import TypewriterGif from "@/assets/typewriter.gif";
-import AltTypewriterGif from "@/assets/alt_typewriter.gif";
+import TypewriterGif from "@/assets/gifs/typewriter.gif";
+import AltTypewriterGif from "@/assets/gifs/alt_typewriter.gif";
 
 export function Journal() {
   const [q, setQ] = React.useState("");

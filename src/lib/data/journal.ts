@@ -1,5 +1,5 @@
 import { BellRing } from "lucide-react";
-import ggphoto from "@/assets/ggtennisc.jpg";
+import ggphoto from "@/assets/images/tennis/ggtennisc.jpg";
 
 export type JournalEntryComment = {
   paragraph: number;

@@ -1,10 +1,10 @@
 import { useMemo, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import headshot320 from "@/assets/TennisHeadshot2-320.jpg";
-import headshot640 from "@/assets/TennisHeadshot2-640.jpg";
-import headshotDark320 from "@/assets/TennisHeadshotDark-320.png";
-import headshotDark640 from "@/assets/TennisHeadshotDark-640.png";
+import headshot320 from "@/assets/images/headshots/TennisHeadshot2-320.jpg";
+import headshot640 from "@/assets/images/headshots/TennisHeadshot2-640.jpg";
+import headshotDark320 from "@/assets/images/headshots/TennisHeadshotDark-320.png";
+import headshotDark640 from "@/assets/images/headshots/TennisHeadshotDark-640.png";
 import { PROFILE } from "@/lib/data/profile";
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
