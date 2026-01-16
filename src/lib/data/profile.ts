@@ -27,25 +27,7 @@ export const PROFILE = {
   ],
   education: {
     school: "University of Ottawa",
-    program: "Honours B.Sc. in Computer Science",
+    program: "B.Sc. in Computer Science",
     distinction: "Magna Cum Laude",
   },
-  principles: [
-    {
-      title: "Clarity over cleverness",
-      body: "Readable code, clear APIs, and pragmatic architecture.",
-    },
-    {
-      title: "Small loops, fast feedback",
-      body: "Automate tests, ship iteratively, measure what matters.",
-    },
-    {
-      title: "Reliability",
-      body: "Design for failures, add guardrails, invest in observability.",
-    },
-    {
-      title: "User empathy",
-      body: "Polished interactions and docs so people actually enjoy using it.",
-    },
-  ],
 };

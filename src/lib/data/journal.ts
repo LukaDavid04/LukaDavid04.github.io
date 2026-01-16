@@ -31,6 +31,7 @@ export type JournalEntryType = {
 };
 
 // Things to Journal about
+// - Things I learned Growing a Business
 // - Gamewinner at home MBB
 // - Graduating - What you do for a ring
 // - Convocation
