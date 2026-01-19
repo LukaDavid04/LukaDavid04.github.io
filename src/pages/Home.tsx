@@ -68,7 +68,7 @@ export function Home() {
         title: "Quick bites",
         subtitle: "Check back for more!",
         description:
-          "In-yun (From Past Lives): \n In-yun (인연), is a Korean concept that signifies a fated or destined connection between people, suggesting that relationships have roots in past lives. It is believed that even brief encounters, like two strangers' clothes brushing, have a deeper meaning and have been shaped by a connection that spans many lifetimes. For example, a marriage is said to result from 8,000 layers of in-yun accumulated over 8,000 lives.",
+          "Being a Co-Owner: \n Earlier this year I had the opportunity to become a co-owner of a football team based in the UK. I've been supporting Hashtag United since it's inauguration. Although I own a very small stake, I'm incredibly proud to be a part of their story. They currently play in the 7th tier of English football. It's been an exciting journey so far, including three promotions and a historic FA Cup run! Their ultimate goal is to make it to the premier league. Having a tangible connection to the club makes it all the more special to watch.\n\n",
       },
     ],
     []
