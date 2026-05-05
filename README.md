@@ -1,4 +1,4 @@
-# My Personal Portfolio ✨
+# My Personal Portfolio
 
 ![Vite + React badge](https://img.shields.io/badge/Vite-%235C2D91?style=for-the-badge&logo=vite&logoColor=FFD62E)
 ![React badge](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
