@@ -47,7 +47,7 @@ export function Home() {
         key: "position",
         kind: "link",
         title: "Current Position",
-        subtitle: "AiAware SWE",
+        subtitle: "Minicor FDE",
         description: "What my day-to-day looks like.",
         cta: { label: "See experience", href: "/experience" },
       },

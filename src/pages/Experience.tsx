@@ -4,8 +4,8 @@ import { ExperienceCard } from "@/components/experience-card";
 import { motion } from "framer-motion";
 
 export function Experience() {
-  const currentExperience = EXPERIENCE.find((e) => e.company === "AiAware");
-  const previousExperience = EXPERIENCE.filter((e) => e.company !== "AiAware");
+  const currentExperience = EXPERIENCE.find((e) => e.company === "Minicor");
+  const previousExperience = EXPERIENCE.filter((e) => e.company !== "Minicor");
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "auto" });

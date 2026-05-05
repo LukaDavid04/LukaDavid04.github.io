@@ -1,10 +1,10 @@
 export const PROFILE = {
   name: "Luka David",
-  title: "Software Engineer @ AiAware — AI, Cloud, Full-Stack",
+  title: "Forward Deployed Engineer @ Minicor — AI, Cloud, Full-Stack",
   location: "Ottawa, ON",
   email: "LukaDavid307@gmail.com",
   summary:
-    "Developed AI-driven and full-stack solutions used by global enterprises and Fortune 500 companies. Skilled in building cloud-based, data-driven, and innovative tools with React, Azure, and .NET. Proven leadership and critical thinking skills.\nLead Assistant Coach for uOttawa Gee-Gee's Varsity Tennis Team 🥈",
+    "Developed AI-driven and full-stack solutions used by early-stage startups and Fortune 500 companies. Skilled in building scalable backend services, intelligent applications, and modern web interfaces. Proven leadership and critical thinking skills.\nLead Assistant Coach for uOttawa Gee-Gee's Varsity Tennis Team 🥈",
   keywords: [
     "Python",
     "Java",
@@ -21,7 +21,7 @@ export const PROFILE = {
     { label: "Email", href: "mailto:LukaDavid307@gmail.com" },
   ],
   current: [
-    "Building AI features with RAG and evaluation loops.",
+    "Building AI agent-driven RPA workflows at Minicor.",
     "Learning more about networking + distributed systems.",
     "Coaching tennis & running on weekends.",
   ],

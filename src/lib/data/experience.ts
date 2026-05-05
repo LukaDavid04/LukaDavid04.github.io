@@ -1,8 +1,21 @@
 export const EXPERIENCE = [
   {
+    company: "Minicor",
+    role: "Forward Deployed Engineer",
+    period: "Apr 2026 — Present",
+    location: "San Francisco, CA (Remote)",
+    highlights: [
+      "Tested, debugged, and optimized RPA workflows across Windows VM environments, reducing workflow execution time by 15% for a high-priority client.",
+      "Built Python scripts for AI agent-driven RPA workflows with self-healing recovery, exposing legacy medical system tasks through API-callable endpoints.",
+      "Owned go-live delivery for an AI healthcare client, using Google Cloud Platform to support automations that process clinic fax reports and retrieve operational data.",
+      "Built JavaScript features for workspace administration, user invites, and access management.",
+    ],
+    stack: ["Python", "JavaScript", "GCP", "RPA", "AI Agents"],
+  },
+  {
     company: "AiAware",
     role: "Software Engineer, AI Platforms",
-    period: "Jan 2025 — Present",
+    period: "Jan 2025 — Mar 2026",
     location: "Remote / Ottawa, ON",
     highlights: [
       "Owned and led end-to-end engineering for two flagship AI-powered risk assessment tools serving public sector bodies.",
