@@ -11,6 +11,7 @@ import { MapPin } from "lucide-react";
 import { Modal } from "@/components/modal";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { LeetCodeCard } from "@/components/leetcode-card";
 
 type AboutCard =
   | {
@@ -314,6 +315,8 @@ export function Home() {
             </div>
           </div>
         </div>
+
+        <LeetCodeCard />
 
         {/* You can keep or customize your "Currently" card here if desired */}
         {/* <div className="rounded-2xl border bg-card shadow-sm transition-shadow duration-200 hover:shadow-md dark:shadow-sm dark:transition-shadow dark:hover:shadow-[0_10px_24px_-20px_rgba(255,255,255,0.12)] dark:hover:ring-1 dark:hover:ring-white/10">
