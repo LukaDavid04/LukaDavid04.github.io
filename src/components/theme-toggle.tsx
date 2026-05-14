@@ -18,7 +18,7 @@ const getInitialTheme = () => {
 
 const DEFAULT_ACCENT: DarkAccent = "onyx";
 
-export function ThemeToggle() {
+export function ThemeToggle({ inline = false }: { inline?: boolean }) {
   const [dark, setDark] = useState<boolean>(() => getInitialTheme());
   const [accent] = useState<DarkAccent>(DEFAULT_ACCENT);
   const [btnAnimating, setBtnAnimating] = useState(false);
@@ -39,47 +39,53 @@ export function ThemeToggle() {
     root.dataset.darkAccent = accent;
   }, [accent]);
 
+  const button = (
+    <button
+      aria-label={dark ? "Switch to light theme" : "Switch to dark theme"}
+      onClick={() => {
+        // trigger a brief button animation
+        setBtnAnimating(true);
+        window.setTimeout(() => setBtnAnimating(false), 450);
+        try {
+          const body = document.body;
+          const oldBg = getComputedStyle(body).backgroundColor;
+
+          const overlay = document.createElement("div");
+          overlay.className = "theme-wipe-overlay";
+          overlay.style.backgroundColor = oldBg;
+          body.appendChild(overlay);
+
+          const start = () => {
+            overlay.classList.add("animate");
+          };
+
+          // Toggle theme, then start animation next frame
+          setDark((d) => !d);
+          requestAnimationFrame(() => requestAnimationFrame(start));
+
+          overlay.addEventListener(
+            "animationend",
+            () => overlay.remove(),
+            { once: true }
+          );
+        } catch {
+          // Fallback: toggle without animation
+          setDark((d) => !d);
+        }
+      }}
+      className={`inline-flex items-center rounded-full border border-border/50 bg-background p-2.5 shadow-lg backdrop-blur-md transition hover:bg-secondary/80 ${
+        btnAnimating ? "theme-toggle-animating" : ""
+      }`}
+    >
+      {dark ? <SunMedium className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+    </button>
+  );
+
+  if (inline) return button;
+
   return (
-    <div className="fixed bottom-4 right-4 flex flex-col items-end gap-3 text-left">
-      <button
-        aria-label={dark ? "Switch to light theme" : "Switch to dark theme"}
-        onClick={() => {
-          // trigger a brief button animation
-          setBtnAnimating(true);
-          window.setTimeout(() => setBtnAnimating(false), 450);
-          try {
-            const body = document.body;
-            const oldBg = getComputedStyle(body).backgroundColor;
-
-            const overlay = document.createElement("div");
-            overlay.className = "theme-wipe-overlay";
-            overlay.style.backgroundColor = oldBg;
-            body.appendChild(overlay);
-
-            const start = () => {
-              overlay.classList.add("animate");
-            };
-
-            // Toggle theme, then start animation next frame
-            setDark((d) => !d);
-            requestAnimationFrame(() => requestAnimationFrame(start));
-
-            overlay.addEventListener(
-              "animationend",
-              () => overlay.remove(),
-              { once: true }
-            );
-          } catch {
-            // Fallback: toggle without animation
-            setDark((d) => !d);
-          }
-        }}
-        className={`inline-flex items-center rounded-full border border-border/50 bg-background p-2.5 shadow-lg backdrop-blur-md transition hover:bg-secondary/80 ${
-          btnAnimating ? "theme-toggle-animating" : ""
-        }`}
-      >
-        {dark ? <SunMedium className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-      </button>
+    <div className="fixed bottom-4 right-4 flex-col items-end gap-3 text-left hidden lg:flex">
+      {button}
     </div>
   );
 }
