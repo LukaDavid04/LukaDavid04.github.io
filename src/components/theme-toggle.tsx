@@ -73,9 +73,11 @@ export function ThemeToggle({ inline = false }: { inline?: boolean }) {
           setDark((d) => !d);
         }
       }}
-      className={`inline-flex items-center rounded-full border border-border/50 bg-background p-2.5 shadow-lg backdrop-blur-md transition hover:bg-secondary/80 ${
-        btnAnimating ? "theme-toggle-animating" : ""
-      }`}
+      className={`inline-flex items-center transition ${
+        inline
+          ? "p-2 border rounded-md hover:bg-secondary/60"
+          : "rounded-full border border-border/50 bg-background p-2.5 shadow-lg backdrop-blur-md hover:bg-secondary/80"
+      } ${btnAnimating ? "theme-toggle-animating" : ""}`}
     >
       {dark ? <SunMedium className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
     </button>
