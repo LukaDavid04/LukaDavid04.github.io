@@ -98,12 +98,12 @@ export function Home() {
         >
           <Card className="overflow-hidden">
             <div className="relative">
-              <div className="h-48 sm:h-58 bg-gradient-to-br from-blue-500/40 via-violet-500/30 to-emerald-400/40 animate-shimmerSlow bg-[length:200%_100%]" />{" "}
+              <div className="h-32 sm:h-48 md:h-58 bg-gradient-to-br from-blue-500/40 via-violet-500/30 to-emerald-400/40 animate-shimmerSlow bg-[length:200%_100%]" />{" "}
               <div className="absolute right-5 top-5 flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-sm font-medium text-slate-700 shadow-sm backdrop-blur dark:bg-slate-950/70 dark:text-slate-100">
                 <MapPin className="h-4 w-4 text-blue-600 dark:text-blue-400" />
                 <span>{PROFILE.location}</span>
               </div>
-              <div className="absolute -bottom-10 left-6 h-40 w-40 sm:h-29 sm:w-29 rounded-3xl ring-2 ring-white/70 dark:ring-black/40 shadow-xl overflow-hidden flex items-center justify-center">
+              <div className="absolute -bottom-10 left-4 sm:left-6 h-24 w-24 sm:h-40 sm:w-40 rounded-3xl ring-2 ring-white/70 dark:ring-black/40 shadow-xl overflow-hidden flex items-center justify-center">
                 {/* Swap headshots based on theme using Tailwind dark: classes */}
                 <img
                   loading="eager"
@@ -289,7 +289,7 @@ export function Home() {
               learning opportunities.
             </p>
 
-            <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-2">
+            <div className="mt-4 grid grid-cols-3 gap-2">
               <a
                 href={`mailto:${PROFILE.email}`}
                 className="flex items-center justify-center gap-2 rounded-xl border px-4 py-2 text-sm hover:bg-secondary/70"

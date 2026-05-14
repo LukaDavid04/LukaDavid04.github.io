@@ -20,13 +20,13 @@ export function Journal() {
 
   return (
     <section>
-      <div className="flex items-end justify-between gap-4 mb-4">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 sm:gap-4 mb-4">
         <h1 className="text-3xl font-semibold tracking-tight">Journal</h1>
         <Input
           placeholder="Search…"
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          className="w-56"
+          className="w-full sm:w-56"
         />
       </div>
       <p className="text-sm text-muted-foreground mb-6">
