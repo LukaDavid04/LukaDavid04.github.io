@@ -1,7 +1,7 @@
 export const EXPERIENCE = [
   {
     company: "Minicor",
-    role: "Forward Deployed Engineer",
+    role: "Forward Deployed Engineer (Contract)",
     period: "Apr 2026 — Present",
     location: "San Francisco, CA (Remote)",
     highlights: [
@@ -13,14 +13,15 @@ export const EXPERIENCE = [
     stack: ["Python", "JavaScript", "GCP", "RPA", "AI Agents"],
   },
   {
-    company: "AiAware",
-    role: "Software Engineer, AI Platforms",
+    company: "AiAware Corporation",
+    role: "Software Engineer",
     period: "Jan 2025 — Mar 2026",
-    location: "Remote / Ottawa, ON",
+    location: "Ottawa, ON",
     highlights: [
-      "Owned and led end-to-end engineering for two flagship AI-powered risk assessment tools serving public sector bodies.",
-      "Built an AI chatbot with a React UI and Python backend using LLMs trained on audit and policy documents.",
-      "Implemented a Retrieval-Augmented Generation pipeline using Azure OpenAI and Azure AI Search to embed, index, and query unstructured data.",
+      "Owned and led end-to-end engineering for 2 flagship AI-powered risk assessment tools serving public sector bodies.",
+      "Drove engineering efforts advancing a $500K+ government contract to pilot phase.",
+      "Built an AI chatbot with a React UI and Python backend using LLMs trained on audit documents.",
+      "Implemented a Retrieval-Augmented Generation pipeline using Azure OpenAI and AI Search to embed, index, and query unstructured data.",
       "Developed an LLM-powered application for large-scale document analysis, improving the speed, accuracy, and consistency of complex audit reviews.",
     ],
     stack: ["Python", "React", "Azure", "RAG", "LLM"],
@@ -31,9 +32,9 @@ export const EXPERIENCE = [
     period: "May 2023 — Aug 2023",
     location: "Gatineau, QC",
     highlights: [
-      "Designed and built tools to detect Azure connectivity issues, supporting engineers with automated diagnostics and reducing deployment downtime by 75%.",
+      "Designed and built tools to detect Azure connectivity issues, supporting engineers with automated diagnostics, reducing downtime by 75% during product deployment.",
       "Enhanced Python automation scripts across a testing floor of 10+ integrated data and communication labs.",
-      "Documented and demonstrated to teams how to use, market, and further develop the new tools.",
+      "Documented and demonstrated to teams how to use, market, and further develop new tools.",
     ],
     stack: ["C#/.NET", "Azure", "Automation", "Python"],
   },
@@ -55,11 +56,11 @@ export const EXPERIENCE = [
     period: "2021 (Jan–Apr, Sept–Dec)",
     location: "Ottawa, ON",
     highlights: [
-      "Built cloud features in C#/.NET across two terms, enhancing Magnet Axiom's digital information tool suite.",
-      "Diagnosed and solved Google Takeout issues, adding new data types and unblocking a critical customer.",
-      "Reverse-engineered private APIs (Slack, Instagram, Snapchat, MEGA) to create new XML and JSON digital-forensics artifacts.",
-      "Tested new acquisition features through integration, regression, automated, and unit test suites.",
+      "Diagnosed and solved various Google Takeout issues, adding new data types and unblocking a critical customer.",
+      "Built cloud features in C#/.NET across 2 terms, enhancing Magnet Axiom's digital information tool suite.",
+      "Reverse engineered private APIs (Slack, Instagram, Snapchat, MEGA) to create new XML/JSON forensic artifacts.",
       "Worked with CI/CD automation and build pipelines within Jenkins to support continuous integration and testing.",
+      "Tested new acquisition features through integration, regression, automated, and unit test suites.",
     ],
     stack: ["C#/.NET", "APIs", "Testing", "Jenkins"],
   },
@@ -69,7 +70,7 @@ export const EXPERIENCE = [
     period: "May 2020 — Dec 2020",
     location: "Ottawa, ON",
     highlights: [
-      "Designed and produced an e-learning portal using React, Redux, and Firebase to host interactive learning modules.",
+      "Designed & produced an e-learning portal using React, Redux and Firebase, serving thousands of students.",
       "Led design and development laying the groundwork for a virtual reality escape room project in Unity (C#).",
     ],
     stack: ["React", "Redux", "Firebase", "Unity", "C#"],
