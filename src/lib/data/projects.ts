@@ -8,6 +8,40 @@ type Project = {
 
 export const PROJECTS: Project[] = [
   {
+    name: "URSA – Urban Reasoning & Spatial Analysis",
+    desc: "A natural-language, map-based spatial analysis assistant that translates typed commands into deterministic, auditable map interactions over open urban data.",
+    href: "https://github.com/LukaDavid04/ursa-spatial-analysis",
+    tags: [
+      "TypeScript",
+      "React",
+      "Vite",
+      "FastAPI",
+      "Docker",
+      "OpenAI",
+      "GeoJSON",
+    ],
+    details: `
+**Overview**
+URSA is a natural-language spatial analysis assistant built on open urban data. Users issue typed commands that are translated into deterministic, schema-validated map actions — keeping LLM output as a proposal, never a direct mutation of state.
+
+**Headlines**
+🗺️ Natural-language commands drive auditable, multi-step map interactions
+🔒 Deterministic execution with schema validation and permission checks
+📜 Immutable event log for full audit history and replay
+
+**At a Glance**
+- Stack: React + Vite frontend, FastAPI backend, LLM planning layer, Docker services
+- Data: GeoJSON geometries, spatial indexes, overlay catalogs, immutable event logs
+- UX: Ambiguity resolution, serialized multi-step actions, command history
+
+**Highlights**
+- LLM planner emits structured action plans validated against explicit schemas before execution
+- Supports assets, overlays, and events with spatial indexing and bounding-box queries
+- Async orchestration with streaming partial responses for low-latency feedback
+- Designed for urban planners, operations teams, and analysts querying spatial data conversationally
+`.trim(),
+  },
+  {
     name: "This Portfolio",
     desc: "A fast, accessible React and Vite portfolio with reusable UI, intentional motion, and tidy routing.",
     href: "https://lukadavid04.github.io/",

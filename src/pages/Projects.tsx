@@ -82,11 +82,11 @@ export function Projects() {
                   <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">{p.name}</h2>
                   <p className="mt-2 text-sm leading-6 text-muted-foreground">{p.desc}</p>
                 </div>
-                <div className="flex shrink-0 items-center gap-2">
-                  {p.href && i !== 0 ? (
-                    <Button asChild size="sm">
-                      <a href={p.href} target="_blank" rel="noopener noreferrer">Open Link</a>
-                    </Button>
+                <div className="flex shrink-0 items-center gap-3">
+                  {p.href && p.name !== "This Portfolio" ? (
+                    <a href={p.href} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground transition-colors">
+                      Open Link ↗
+                    </a>
                   ) : null}
                   <button
                     onClick={() => toggle(i)}
